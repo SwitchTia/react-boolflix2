@@ -1,4 +1,4 @@
-import "./Header.css"
+import "./Header.css";
 
 function Header ({ searchQuery, setSearchQuery,}) {
 
@@ -21,4 +21,4 @@ function Header ({ searchQuery, setSearchQuery,}) {
     )
 }
 
-export default Header
+export default Header;

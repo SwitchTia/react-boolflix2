@@ -9,12 +9,12 @@ function MovieCard ({ movie }) {
     // TV Show  movie.name      movie.original_name
     
     const movieTitle = movie.type === "movie" ? movie.title : movie.name;
-    const tvShowTitle = movie.type === "movie" ? movie.original_title : movie.original_name
+    const tvShowTitle = movie.type === "movie" ? movie.original_title : movie.original_name;
 
     //Rendering movie/Tv show poster
     const moviePosterUrl = movie.poster_path 
         ? `${IMAGE_BASE_URL}${movie.poster_path}`
-        : "https://via.placeholder.com/342x513?text=No+Image"
+        : "https://via.placeholder.com/342x513?text=No+Image";
 
     return (
         <div className="movie-card">
@@ -28,3 +28,5 @@ function MovieCard ({ movie }) {
     )
 
 }
+
+export default MovieCard;
