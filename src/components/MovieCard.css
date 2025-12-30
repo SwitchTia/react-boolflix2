@@ -1,0 +1,11 @@
+.movie-card {
+    background-color: grey;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.card-img {
+    display: block;
+    aspect-ratio: 2/3;
+    overflow: hidden;
+}
