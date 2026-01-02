@@ -24,6 +24,12 @@ function MovieCard({ movie }) {
 
             </div>
 
+            <div className="card-info">
+
+                <h3 className="card-title"> {movieTitle}</h3>
+
+            </div>
+
         </div>
     )
 
