@@ -17,20 +17,22 @@ function MovieCard({ movie }) {
         : "https://via.placeholder.com/342x513?text=No+Image";
 
     return (
-        <div className="movie-card">
-            <div className="card-img">
+  
+            <div className="movie-card">
+                <div className="card-img">
 
-                <img src={moviePosterUrl} alt={movieTitle} />
+                    <img src={moviePosterUrl} alt={movieTitle} />
 
+                </div>
+
+                <div className="card-info">
+
+                    <h3 className="card-title"> {movieTitle}</h3>
+
+                </div>
             </div>
 
-            <div className="card-info">
-
-                <h3 className="card-title"> {movieTitle}</h3>
-
-            </div>
-
-        </div>
+     
     )
 
 }

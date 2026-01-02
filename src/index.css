@@ -11,3 +11,20 @@
 img {
   width: 100%;
 }
+
+/* responsive mobile first */
+/* tablet */
+/* @media (min-width: 768px) {
+
+  .col {
+    width: calc(100% / 4 - (10px * 3) / 4);
+  }
+} */
+
+/* Desktop */
+/* @media (min-width: 1200px) {
+
+  .col {
+    width: calc(100% / 6 - (10px * 5) / 6)
+  }
+} */
