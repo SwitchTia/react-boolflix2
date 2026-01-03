@@ -20,6 +20,7 @@ function Header({ searchQuery, setSearchQuery, handleSearch }) {
                         value={searchQuery}
                         onChange={(event) => setSearchQuery(event.target.value)}
                         onClick={handleKeyPress}
+                        onKeyDown={handleKeyPress}
                     />
 
                     <button onClick={handleSearch}>Search</button>
