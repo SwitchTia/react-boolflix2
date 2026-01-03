@@ -1,5 +1,5 @@
 export default function StarFull(props) {
-  const color = "#964156ff";
+  const color = "rgb(197, 59, 59)";
   
   return (
     <svg 

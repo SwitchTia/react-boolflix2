@@ -9,12 +9,10 @@
     transition: transform 0.3s;
 }
 
+.movie-card:hover {
+    transform: scale(1.05);
 
-
-.movie-card :hover {
-    transform: scale(1.08);
-
-    z-index: 10;
+    z-index: 100;
 }
 
 .card-img {
@@ -41,19 +39,28 @@
     transition: opacity 0.3s;
     color: white;
     background: rgba(0, 0, 0, 0.80);
-    overflow-y: auto;
-    
+    overflow-y: auto;  
 }
 
 .card-title {
     font-size: larger;
     color: rgb(197, 59, 59);
-    margin-bottom: 20px;
-    
+    margin-bottom: 20px;    
 }
 
 .movie-card:hover .card-info{
-
     opacity: 1;
+}
+
+.card-details p {
+    margin-bottom: 15px;
+    color: white;
+}
+
+.overview {
+    margin-top: 15px;
+    font-size: small;
+    line-height: 1.5;
+
 }
 

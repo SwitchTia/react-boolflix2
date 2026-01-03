@@ -19,7 +19,7 @@ function MovieCard({ movie }) {
         ? `${IMAGE_BASE_URL}${movie.poster_path}`
         : "https://via.placeholder.com/342x513?text=No+Image";
 
-    //stars
+    //Rendering the rating stars
     function convertVoteToStars (vote){
         const stars = Math.ceil(vote/2);
         return stars;
@@ -52,8 +52,16 @@ function MovieCard({ movie }) {
             <div className="card-info">
 
                 <h3 className="card-title"> {movieTitle}</h3>
+                
                 <div>
-                    {renderStars}
+                    {renderStars()}
+                </div>
+
+                <div className="card-details">
+                    <p>Votes: {movie.vote_count}</p>
+                    <p>Ratings: {movie.vote_average}</p>
+                    <p className="overview"> {movie.overview}</p>
+
                 </div>
 
             </div>
