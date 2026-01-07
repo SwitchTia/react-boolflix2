@@ -1,6 +1,60 @@
 import "./Header.css";
+import { useState } from "react";
+import axios from "axios";
 
-function Header({ searchQuery, setSearchQuery, handleSearch }) {
+function Header({ searchedMovieList, setSearchedMovieList }) {
+
+    const [searchQuery, setSearchQuery] = useState("");
+
+
+    const API_KEY = import.meta.env.VITE_API_KEY;//importing the key from enviroment variable
+    const BASE_URL = 'https://api.themoviedb.org/3';
+
+
+
+    function handleSearch() {
+        if (!searchQuery) return
+
+        // Search for movies
+        axios.get(`${BASE_URL}/search/movie`, {
+            params: {
+                api_key: API_KEY,
+                query: searchQuery,
+                language: 'it-IT'
+            }
+        })
+
+            .then((moviesResponse) => {
+                // Add type to movies
+                const movies = moviesResponse.data.results.map(movie => ({
+                    ...movie,
+                    type: 'movie'
+                }))
+
+                // Search for TV shows
+                return axios.get(`${BASE_URL}/search/tv`, {
+                    params: {
+                        api_key: API_KEY,
+                        query: searchQuery,
+                        language: 'it-IT'
+                    }
+                })
+
+                    .then((tvResponse) => {
+                        // Add type to TV shows
+                        const tvShows = tvResponse.data.results.map(show => ({
+                            ...show,
+                            type: 'tv'
+                        }))
+
+                        // Combine both results
+                        setSearchedMovieList([...movies, ...tvShows])
+                    })
+            })
+            .catch((error) => {
+                console.error('Error searching:', error)
+            })
+    }
 
     function handleKeyPress(event) {
         if (event.key === "Enter") {
