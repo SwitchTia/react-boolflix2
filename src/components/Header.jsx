@@ -7,7 +7,7 @@ function Header({ searchQuery, setSearchQuery, handleSearch }) {
             handleSearch();
         }
     }
-
+///nkq,jGILQU W3AIOEwl-aku .4,gzjhrem,
     return (
         <header className="header">
             <div className="header-content">
