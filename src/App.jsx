@@ -3,6 +3,9 @@ import "./App.css";
 import Header from "./components/Header.jsx";
 import MovieCard from "./components/MovieCard";
 
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import DefaultLayout from "./layouts/DefaultLayout.jsx";
+
 
 
 function App() {
@@ -11,26 +14,39 @@ function App() {
 
 
   return (
-    <div className="App">
 
-      <Header
-        setMoviesList={setMoviesList}
+    
+      <BrowserRouter>
+        <Routes>
+          <Route element={<DefaultLayout moviesList={moviesList} setMoviesList={setMoviesList} />}>
+            
+            
+            
+        
+          </Route>
+        </Routes>
+      </BrowserRouter>
+   
+    // <div className="App">
+
+    //   <Header
+    //     setMoviesList={setMoviesList}
        
-      />
+    //   />
 
-      <main className="main-content">
-        <div className="cards-container">
-          {moviesList.map((movie) => (
+    //   <main className="main-content">
+    //     <div className="cards-container">
+    //       {moviesList.map((movie) => (
 
-            <MovieCard
-              key={`${movie.type}-${movie.id}`}
-              movie={movie} />
-          ))}
+    //         <MovieCard
+    //           key={`${movie.type}-${movie.id}`}
+    //           movie={movie} />
+    //       ))}
 
-        </div>
-      </main>
+    //     </div>
+    //   </main>
 
-    </div>
+    // </div>
   )
 }
 
